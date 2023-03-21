@@ -1,10 +1,33 @@
 import './App.css';
-import Painting from './components/Painting';
+import PaintingList from './components/PaintingList';
+import paintings from './paintings.json';
+import Logo from './components/Logo';
+import Panel from './components/Panel';
+
+//на 12 строці додаємо айдішник як унікальний ключ кожного елементу списку
+//якщо в колекції немає наприклад idшників можна в map використовувати index або саму назву елемента
 
 function App() {
-  return (<div>
-    <h1>Це з файлу App</h1>
-    <Painting url="це url" alt="це title"/>
+  return (
+    <div>
+      <Panel title="останні новини">
+        <p>Hello</p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, fugiat.
+        </p>
+        <a href="/">Читати</a>
+      </Panel>
+
+      <Panel>
+        <p>Hello</p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, fugiat.
+        </p>
+      </Panel>
+
+      <Logo text={'Це ЛОГО компонент'} />
+      <PaintingList paintings={paintings} />
+     
   </div>);
 }
 
